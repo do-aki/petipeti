@@ -1,0 +1,24 @@
+日本語プログラミング言語「ぺちぺち」
+
+phpカンファレンス2011 の LT で発表させていただいたものです。
+発表資料はこちら -> http://www.slideshare.net/do_aki/20110910-php
+
+あらかじめ、 re2c (http://re2c.org/) と bison (http://www.gnu.org/s/bison/) をインストールしておいてください。
+
+現時点での、 php オリジナルとの差分は
+https://github.com/do-aki/petipeti/commit/0d1bc0bf0698c120ebff9ba282f4d0c615838446
+これだけ。
+
+
+==========================
+コンパイル方法
+==========================
+cd php-5.4.0alpha3
+./configure
+make 
+==========================
+
+php-5.4.0alpha3/sapi/cli/php ってファイルができるので、そいつで遊ぶべし。
+
+make test も問題なく通るけど、test 後の報告はしないように。（本家の人混乱させちゃうから＞＜）
+
