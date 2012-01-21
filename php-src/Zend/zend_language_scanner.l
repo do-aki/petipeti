@@ -1006,15 +1006,103 @@ NEWLINE ("\r"|"\n"|"\r\n")
 <!*> := yyleng = YYCURSOR - SCNG(yy_text);
 
 
+<ST_IN_SCRIPTING>"変数:" {
+	return T_HENSU;
+}
+
+<ST_IN_SCRIPTING>"を" {
+	return T_WO;
+}
+
+<ST_IN_SCRIPTING>"が" {
+	return T_GA;
+}
+
+<ST_IN_SCRIPTING>"は" {
+	return T_HA;
+}
+
+<ST_IN_SCRIPTING>"に" {
+	return T_NI;
+}
+
+<ST_IN_SCRIPTING>"を代入" {
+	return T_DAINYU;
+}
+
+<ST_IN_SCRIPTING>"です" {
+	return T_DESU;
+}
+
+<ST_IN_SCRIPTING>"「" {
+	return T_OPEN_OUTPUT;
+}
+
+<ST_IN_SCRIPTING>"」と出力"|"」と表示" {
+	return T_CLOSE_OUTPUT;
+}
+
+<ST_IN_SCRIPTING>"もし" {
+	return T_JA_IF;
+}
+
+<ST_IN_SCRIPTING>"ならば" {
+	return T_NARABA;
+}
+
+<ST_IN_SCRIPTING>"そうでないならば" {
+	return T_JA_ELSE;
+}
+
+<ST_IN_SCRIPTING>"条件終わり"|"条件おわり" {
+	return T_OWARI;
+}
+
+<ST_IN_SCRIPTING>"繰り返し" {
+	return T_KURIKAESI;
+}
+
+<ST_IN_SCRIPTING>"の間" {
+	return T_AIDA;
+}
+
+<ST_IN_SCRIPTING>"に等しい" {
+	return T_OP_EQ;
+}
+
+<ST_IN_SCRIPTING>"と違う" {
+	return T_OP_NE;
+}
+
+<ST_IN_SCRIPTING>"足す" {
+	return T_JA_PLUS;
+}
+
+<ST_IN_SCRIPTING>"引く" {
+	return T_JA_MINUS;
+}
+
+<ST_IN_SCRIPTING>"掛ける" {
+	return T_JA_MULT;
+}
+
+<ST_IN_SCRIPTING>"割る" {
+	return T_JA_DIV;
+}
+
+<ST_IN_SCRIPTING>"で割った余り" {
+	return T_JA_MOD;
+}
+
 <ST_IN_SCRIPTING>"exit" {
 	return T_EXIT;
 }
 
-<ST_IN_SCRIPTING>"die" {
+<ST_IN_SCRIPTING>"die"|"氏ね" {
 	return T_EXIT;
 }
 
-<ST_IN_SCRIPTING>"function" {
+<ST_IN_SCRIPTING>"function"|"関数" {
 	return T_FUNCTION;
 }
 
@@ -1022,15 +1110,15 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_CONST;
 }
 
-<ST_IN_SCRIPTING>"return" {
+<ST_IN_SCRIPTING>"return"|"戻り値" {
 	return T_RETURN;
 }
 
-<ST_IN_SCRIPTING>"try" {
+<ST_IN_SCRIPTING>"try"|"試す" {
 	return T_TRY;
 }
 
-<ST_IN_SCRIPTING>"catch" {
+<ST_IN_SCRIPTING>"catch"|"ばっちこい" {
 	return T_CATCH;
 }
 
@@ -1134,11 +1222,11 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_PRINT;
 }
 
-<ST_IN_SCRIPTING>"class" {
+<ST_IN_SCRIPTING>"class"|"クラス" {
 	return T_CLASS;
 }
 
-<ST_IN_SCRIPTING>"interface" {
+<ST_IN_SCRIPTING>"interface"|"インターフェース" {
 	return T_INTERFACE;
 }
 
@@ -1146,15 +1234,15 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_TRAIT;
 }
 
-<ST_IN_SCRIPTING>"extends" {
+<ST_IN_SCRIPTING>"extends"|"拡張" {
 	return T_EXTENDS;
 }
 
-<ST_IN_SCRIPTING>"implements" {
+<ST_IN_SCRIPTING>"implements"|"実装" {
 	return T_IMPLEMENTS;
 }
 
-<ST_IN_SCRIPTING>"->" {
+<ST_IN_SCRIPTING>"->"|"の" {
 	yy_push_state(ST_LOOKING_FOR_PROPERTY TSRMLS_CC);
 	return T_OBJECT_OPERATOR;
 }
@@ -1192,7 +1280,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_NS_SEPARATOR;
 }
 
-<ST_IN_SCRIPTING>"new" {
+<ST_IN_SCRIPTING>"new"|"新規" {
 	return T_NEW;
 }
 
@@ -1284,7 +1372,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_STATIC;
 }
 
-<ST_IN_SCRIPTING>"abstract" {
+<ST_IN_SCRIPTING>"abstract"|"抽象" {
 	return T_ABSTRACT;
 }
 
@@ -1292,7 +1380,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_FINAL;
 }
 
-<ST_IN_SCRIPTING>"private" {
+<ST_IN_SCRIPTING>"private"|"非公開" {
 	return T_PRIVATE;
 }
 
@@ -1300,7 +1388,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_PROTECTED;
 }
 
-<ST_IN_SCRIPTING>"public" {
+<ST_IN_SCRIPTING>"public"|"公開" {
 	return T_PUBLIC;
 }
 
@@ -1348,12 +1436,20 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_IS_NOT_EQUAL;
 }
 
-<ST_IN_SCRIPTING>"<=" {
+<ST_IN_SCRIPTING>"<="|"以下" {
 	return T_IS_SMALLER_OR_EQUAL;
 }
 
-<ST_IN_SCRIPTING>">=" {
+<ST_IN_SCRIPTING>">="|"以上" {
 	return T_IS_GREATER_OR_EQUAL;
+}
+
+<ST_IN_SCRIPTING>"より小さい" {
+	return T_YORI_TIISAI;
+}
+
+<ST_IN_SCRIPTING>"より大きい" {
+	return T_YORI_OOKII;
 }
 
 <ST_IN_SCRIPTING>"+=" {
@@ -1400,11 +1496,11 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	return T_XOR_EQUAL;
 }
 
-<ST_IN_SCRIPTING>"||" {
+<ST_IN_SCRIPTING>"||"|"または" {
 	return T_BOOLEAN_OR;
 }
 
-<ST_IN_SCRIPTING>"&&" {
+<ST_IN_SCRIPTING>"&&"|"かつ" {
 	return T_BOOLEAN_AND;
 }
 
@@ -1433,7 +1529,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 }
 
 
-<ST_IN_SCRIPTING>"{" {
+<ST_IN_SCRIPTING>"{"|"ここから" {
 	yy_push_state(ST_IN_SCRIPTING TSRMLS_CC);
 	return '{';
 }
@@ -1445,7 +1541,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 }
 
 
-<ST_IN_SCRIPTING>"}" {
+<ST_IN_SCRIPTING>"}"|"ここまで" {
 	RESET_DOC_COMMENT();
 	if (!zend_stack_is_empty(&SCNG(state_stack))) {
 		yy_pop_state(TSRMLS_C);
@@ -1750,7 +1846,7 @@ NEWLINE ("\r"|"\n"|"\r\n")
 }
 
 
-<INITIAL>"<?php"([ \t]|{NEWLINE}) {
+<INITIAL>("<?php"|"ぺちぺち")([ \t]|{NEWLINE}) {
 	zendlval->value.str.val = yytext; /* no copying - intentional */
 	zendlval->value.str.len = yyleng;
 	zendlval->type = IS_STRING;
@@ -1844,6 +1940,14 @@ inline_html:
 	return T_VARIABLE;
 }
 
+<ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE>"変数:"{LABEL}"->"[a-zA-Z_\x7f-\xff] {
+	yyless(yyleng - 3);
+	yy_push_state(ST_LOOKING_FOR_PROPERTY TSRMLS_CC);
+	zend_copy_value(zendlval, (yytext+7), (yyleng-7));
+	zendlval->type = IS_STRING;
+	return T_VARIABLE;
+}
+
 /* A [ always designates a variable offset, regardless of what follows
  */
 <ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE>"$"{LABEL}"[" {
@@ -1854,8 +1958,22 @@ inline_html:
 	return T_VARIABLE;
 }
 
+<ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE>"変数:"{LABEL}"[" {
+	yyless(yyleng - 1);
+	yy_push_state(ST_VAR_OFFSET TSRMLS_CC);
+	zend_copy_value(zendlval, (yytext+7), (yyleng-7));
+	zendlval->type = IS_STRING;
+	return T_VARIABLE;
+}
+
 <ST_IN_SCRIPTING,ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE,ST_VAR_OFFSET>"$"{LABEL} {
 	zend_copy_value(zendlval, (yytext+1), (yyleng-1));
+	zendlval->type = IS_STRING;
+	return T_VARIABLE;
+}
+
+<ST_IN_SCRIPTING,ST_DOUBLE_QUOTES,ST_HEREDOC,ST_BACKQUOTE,ST_VAR_OFFSET>"変数:"{LABEL} {
+	zend_copy_value(zendlval, (yytext+7), (yyleng-7));
 	zendlval->type = IS_STRING;
 	return T_VARIABLE;
 }
@@ -1952,7 +2070,7 @@ inline_html:
 	return T_COMMENT;
 }
 
-<ST_IN_SCRIPTING>("?>"|"</script"{WHITESPACE}*">"){NEWLINE}? {
+<ST_IN_SCRIPTING>("?>"|"</script"{WHITESPACE}*">"|"ぺちぺちおしまい"){NEWLINE}? {
 	zendlval->value.str.val = yytext; /* no copying - intentional */
 	zendlval->value.str.len = yyleng;
 	zendlval->type = IS_STRING;

@@ -1,24 +1,23 @@
-/* A Bison parser, made by GNU Bison 2.3.  */
+
+/* A Bison parser, made by GNU Bison 2.4.1.  */
 
 /* Skeleton interface for Bison's Yacc-like parsers in C
-
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
    Free Software Foundation, Inc.
-
-   This program is free software; you can redistribute it and/or modify
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -29,9 +28,10 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-
+   
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
+
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -66,107 +66,131 @@
      T_IS_IDENTICAL = 281,
      T_IS_NOT_EQUAL = 282,
      T_IS_EQUAL = 283,
-     T_IS_GREATER_OR_EQUAL = 284,
-     T_IS_SMALLER_OR_EQUAL = 285,
-     T_SR = 286,
-     T_SL = 287,
-     T_INSTANCEOF = 288,
-     T_UNSET_CAST = 289,
-     T_BOOL_CAST = 290,
-     T_OBJECT_CAST = 291,
-     T_ARRAY_CAST = 292,
-     T_STRING_CAST = 293,
-     T_DOUBLE_CAST = 294,
-     T_INT_CAST = 295,
-     T_DEC = 296,
-     T_INC = 297,
-     T_CLONE = 298,
-     T_NEW = 299,
-     T_EXIT = 300,
-     T_IF = 301,
-     T_ELSEIF = 302,
-     T_ELSE = 303,
-     T_ENDIF = 304,
-     T_LNUMBER = 305,
-     T_DNUMBER = 306,
-     T_STRING = 307,
-     T_STRING_VARNAME = 308,
-     T_VARIABLE = 309,
-     T_NUM_STRING = 310,
-     T_INLINE_HTML = 311,
-     T_CHARACTER = 312,
-     T_BAD_CHARACTER = 313,
-     T_ENCAPSED_AND_WHITESPACE = 314,
-     T_CONSTANT_ENCAPSED_STRING = 315,
-     T_ECHO = 316,
-     T_DO = 317,
-     T_WHILE = 318,
-     T_ENDWHILE = 319,
-     T_FOR = 320,
-     T_ENDFOR = 321,
-     T_FOREACH = 322,
-     T_ENDFOREACH = 323,
-     T_DECLARE = 324,
-     T_ENDDECLARE = 325,
-     T_AS = 326,
-     T_SWITCH = 327,
-     T_ENDSWITCH = 328,
-     T_CASE = 329,
-     T_DEFAULT = 330,
-     T_BREAK = 331,
-     T_CONTINUE = 332,
-     T_GOTO = 333,
-     T_FUNCTION = 334,
-     T_CONST = 335,
-     T_RETURN = 336,
-     T_TRY = 337,
-     T_CATCH = 338,
-     T_THROW = 339,
-     T_USE = 340,
-     T_INSTEADOF = 341,
-     T_GLOBAL = 342,
-     T_PUBLIC = 343,
-     T_PROTECTED = 344,
-     T_PRIVATE = 345,
-     T_FINAL = 346,
-     T_ABSTRACT = 347,
-     T_STATIC = 348,
-     T_VAR = 349,
-     T_UNSET = 350,
-     T_ISSET = 351,
-     T_EMPTY = 352,
-     T_HALT_COMPILER = 353,
-     T_CLASS = 354,
-     T_TRAIT = 355,
-     T_INTERFACE = 356,
-     T_EXTENDS = 357,
-     T_IMPLEMENTS = 358,
-     T_OBJECT_OPERATOR = 359,
-     T_DOUBLE_ARROW = 360,
-     T_LIST = 361,
-     T_ARRAY = 362,
-     T_CALLABLE = 363,
-     T_CLASS_C = 364,
-     T_TRAIT_C = 365,
-     T_METHOD_C = 366,
-     T_FUNC_C = 367,
-     T_LINE = 368,
-     T_FILE = 369,
-     T_COMMENT = 370,
-     T_DOC_COMMENT = 371,
-     T_OPEN_TAG = 372,
-     T_OPEN_TAG_WITH_ECHO = 373,
-     T_CLOSE_TAG = 374,
-     T_WHITESPACE = 375,
-     T_START_HEREDOC = 376,
-     T_END_HEREDOC = 377,
-     T_DOLLAR_OPEN_CURLY_BRACES = 378,
-     T_CURLY_OPEN = 379,
-     T_PAAMAYIM_NEKUDOTAYIM = 380,
-     T_NAMESPACE = 381,
-     T_NS_C = 382,
-     T_DIR = 383,
-     T_NS_SEPARATOR = 384
+     T_YORI_OOKII = 284,
+     T_YORI_TIISAI = 285,
+     T_IS_GREATER_OR_EQUAL = 286,
+     T_IS_SMALLER_OR_EQUAL = 287,
+     T_SR = 288,
+     T_SL = 289,
+     T_INSTANCEOF = 290,
+     T_UNSET_CAST = 291,
+     T_BOOL_CAST = 292,
+     T_OBJECT_CAST = 293,
+     T_ARRAY_CAST = 294,
+     T_STRING_CAST = 295,
+     T_DOUBLE_CAST = 296,
+     T_INT_CAST = 297,
+     T_DEC = 298,
+     T_INC = 299,
+     T_CLONE = 300,
+     T_NEW = 301,
+     T_EXIT = 302,
+     T_IF = 303,
+     T_ELSEIF = 304,
+     T_ELSE = 305,
+     T_ENDIF = 306,
+     T_LNUMBER = 307,
+     T_DNUMBER = 308,
+     T_STRING = 309,
+     T_STRING_VARNAME = 310,
+     T_VARIABLE = 311,
+     T_NUM_STRING = 312,
+     T_INLINE_HTML = 313,
+     T_CHARACTER = 314,
+     T_BAD_CHARACTER = 315,
+     T_ENCAPSED_AND_WHITESPACE = 316,
+     T_CONSTANT_ENCAPSED_STRING = 317,
+     T_ECHO = 318,
+     T_DO = 319,
+     T_WHILE = 320,
+     T_ENDWHILE = 321,
+     T_FOR = 322,
+     T_ENDFOR = 323,
+     T_FOREACH = 324,
+     T_ENDFOREACH = 325,
+     T_DECLARE = 326,
+     T_ENDDECLARE = 327,
+     T_AS = 328,
+     T_SWITCH = 329,
+     T_ENDSWITCH = 330,
+     T_CASE = 331,
+     T_DEFAULT = 332,
+     T_BREAK = 333,
+     T_CONTINUE = 334,
+     T_GOTO = 335,
+     T_FUNCTION = 336,
+     T_CONST = 337,
+     T_RETURN = 338,
+     T_TRY = 339,
+     T_CATCH = 340,
+     T_THROW = 341,
+     T_USE = 342,
+     T_INSTEADOF = 343,
+     T_GLOBAL = 344,
+     T_PUBLIC = 345,
+     T_PROTECTED = 346,
+     T_PRIVATE = 347,
+     T_FINAL = 348,
+     T_ABSTRACT = 349,
+     T_STATIC = 350,
+     T_VAR = 351,
+     T_UNSET = 352,
+     T_ISSET = 353,
+     T_EMPTY = 354,
+     T_HALT_COMPILER = 355,
+     T_CLASS = 356,
+     T_TRAIT = 357,
+     T_INTERFACE = 358,
+     T_EXTENDS = 359,
+     T_IMPLEMENTS = 360,
+     T_OBJECT_OPERATOR = 361,
+     T_DOUBLE_ARROW = 362,
+     T_LIST = 363,
+     T_ARRAY = 364,
+     T_CALLABLE = 365,
+     T_CLASS_C = 366,
+     T_TRAIT_C = 367,
+     T_METHOD_C = 368,
+     T_FUNC_C = 369,
+     T_LINE = 370,
+     T_FILE = 371,
+     T_COMMENT = 372,
+     T_DOC_COMMENT = 373,
+     T_OPEN_TAG = 374,
+     T_OPEN_TAG_WITH_ECHO = 375,
+     T_CLOSE_TAG = 376,
+     T_WHITESPACE = 377,
+     T_START_HEREDOC = 378,
+     T_END_HEREDOC = 379,
+     T_DOLLAR_OPEN_CURLY_BRACES = 380,
+     T_CURLY_OPEN = 381,
+     T_PAAMAYIM_NEKUDOTAYIM = 382,
+     T_NAMESPACE = 383,
+     T_NS_C = 384,
+     T_DIR = 385,
+     T_NS_SEPARATOR = 386,
+     T_WO = 387,
+     T_JA_MOD = 388,
+     T_JA_DIV = 389,
+     T_JA_MULT = 390,
+     T_JA_MINUS = 391,
+     T_JA_PLUS = 392,
+     T_GA = 393,
+     T_OP_NE = 394,
+     T_OP_EQ = 395,
+     T_OPEN_OUTPUT = 396,
+     T_CLOSE_OUTPUT = 397,
+     T_JA_IF = 398,
+     T_JA_ELSE = 399,
+     T_OWARI = 400,
+     T_NARABA = 401,
+     T_HA = 402,
+     T_DESU = 403,
+     T_NI = 404,
+     T_DAINYU = 405,
+     T_KURIKAESI = 406,
+     T_AIDA = 407,
+     T_HENSU = 408
    };
 #endif
 /* Tokens.  */
@@ -197,117 +221,142 @@
 #define T_IS_IDENTICAL 281
 #define T_IS_NOT_EQUAL 282
 #define T_IS_EQUAL 283
-#define T_IS_GREATER_OR_EQUAL 284
-#define T_IS_SMALLER_OR_EQUAL 285
-#define T_SR 286
-#define T_SL 287
-#define T_INSTANCEOF 288
-#define T_UNSET_CAST 289
-#define T_BOOL_CAST 290
-#define T_OBJECT_CAST 291
-#define T_ARRAY_CAST 292
-#define T_STRING_CAST 293
-#define T_DOUBLE_CAST 294
-#define T_INT_CAST 295
-#define T_DEC 296
-#define T_INC 297
-#define T_CLONE 298
-#define T_NEW 299
-#define T_EXIT 300
-#define T_IF 301
-#define T_ELSEIF 302
-#define T_ELSE 303
-#define T_ENDIF 304
-#define T_LNUMBER 305
-#define T_DNUMBER 306
-#define T_STRING 307
-#define T_STRING_VARNAME 308
-#define T_VARIABLE 309
-#define T_NUM_STRING 310
-#define T_INLINE_HTML 311
-#define T_CHARACTER 312
-#define T_BAD_CHARACTER 313
-#define T_ENCAPSED_AND_WHITESPACE 314
-#define T_CONSTANT_ENCAPSED_STRING 315
-#define T_ECHO 316
-#define T_DO 317
-#define T_WHILE 318
-#define T_ENDWHILE 319
-#define T_FOR 320
-#define T_ENDFOR 321
-#define T_FOREACH 322
-#define T_ENDFOREACH 323
-#define T_DECLARE 324
-#define T_ENDDECLARE 325
-#define T_AS 326
-#define T_SWITCH 327
-#define T_ENDSWITCH 328
-#define T_CASE 329
-#define T_DEFAULT 330
-#define T_BREAK 331
-#define T_CONTINUE 332
-#define T_GOTO 333
-#define T_FUNCTION 334
-#define T_CONST 335
-#define T_RETURN 336
-#define T_TRY 337
-#define T_CATCH 338
-#define T_THROW 339
-#define T_USE 340
-#define T_INSTEADOF 341
-#define T_GLOBAL 342
-#define T_PUBLIC 343
-#define T_PROTECTED 344
-#define T_PRIVATE 345
-#define T_FINAL 346
-#define T_ABSTRACT 347
-#define T_STATIC 348
-#define T_VAR 349
-#define T_UNSET 350
-#define T_ISSET 351
-#define T_EMPTY 352
-#define T_HALT_COMPILER 353
-#define T_CLASS 354
-#define T_TRAIT 355
-#define T_INTERFACE 356
-#define T_EXTENDS 357
-#define T_IMPLEMENTS 358
-#define T_OBJECT_OPERATOR 359
-#define T_DOUBLE_ARROW 360
-#define T_LIST 361
-#define T_ARRAY 362
-#define T_CALLABLE 363
-#define T_CLASS_C 364
-#define T_TRAIT_C 365
-#define T_METHOD_C 366
-#define T_FUNC_C 367
-#define T_LINE 368
-#define T_FILE 369
-#define T_COMMENT 370
-#define T_DOC_COMMENT 371
-#define T_OPEN_TAG 372
-#define T_OPEN_TAG_WITH_ECHO 373
-#define T_CLOSE_TAG 374
-#define T_WHITESPACE 375
-#define T_START_HEREDOC 376
-#define T_END_HEREDOC 377
-#define T_DOLLAR_OPEN_CURLY_BRACES 378
-#define T_CURLY_OPEN 379
-#define T_PAAMAYIM_NEKUDOTAYIM 380
-#define T_NAMESPACE 381
-#define T_NS_C 382
-#define T_DIR 383
-#define T_NS_SEPARATOR 384
+#define T_YORI_OOKII 284
+#define T_YORI_TIISAI 285
+#define T_IS_GREATER_OR_EQUAL 286
+#define T_IS_SMALLER_OR_EQUAL 287
+#define T_SR 288
+#define T_SL 289
+#define T_INSTANCEOF 290
+#define T_UNSET_CAST 291
+#define T_BOOL_CAST 292
+#define T_OBJECT_CAST 293
+#define T_ARRAY_CAST 294
+#define T_STRING_CAST 295
+#define T_DOUBLE_CAST 296
+#define T_INT_CAST 297
+#define T_DEC 298
+#define T_INC 299
+#define T_CLONE 300
+#define T_NEW 301
+#define T_EXIT 302
+#define T_IF 303
+#define T_ELSEIF 304
+#define T_ELSE 305
+#define T_ENDIF 306
+#define T_LNUMBER 307
+#define T_DNUMBER 308
+#define T_STRING 309
+#define T_STRING_VARNAME 310
+#define T_VARIABLE 311
+#define T_NUM_STRING 312
+#define T_INLINE_HTML 313
+#define T_CHARACTER 314
+#define T_BAD_CHARACTER 315
+#define T_ENCAPSED_AND_WHITESPACE 316
+#define T_CONSTANT_ENCAPSED_STRING 317
+#define T_ECHO 318
+#define T_DO 319
+#define T_WHILE 320
+#define T_ENDWHILE 321
+#define T_FOR 322
+#define T_ENDFOR 323
+#define T_FOREACH 324
+#define T_ENDFOREACH 325
+#define T_DECLARE 326
+#define T_ENDDECLARE 327
+#define T_AS 328
+#define T_SWITCH 329
+#define T_ENDSWITCH 330
+#define T_CASE 331
+#define T_DEFAULT 332
+#define T_BREAK 333
+#define T_CONTINUE 334
+#define T_GOTO 335
+#define T_FUNCTION 336
+#define T_CONST 337
+#define T_RETURN 338
+#define T_TRY 339
+#define T_CATCH 340
+#define T_THROW 341
+#define T_USE 342
+#define T_INSTEADOF 343
+#define T_GLOBAL 344
+#define T_PUBLIC 345
+#define T_PROTECTED 346
+#define T_PRIVATE 347
+#define T_FINAL 348
+#define T_ABSTRACT 349
+#define T_STATIC 350
+#define T_VAR 351
+#define T_UNSET 352
+#define T_ISSET 353
+#define T_EMPTY 354
+#define T_HALT_COMPILER 355
+#define T_CLASS 356
+#define T_TRAIT 357
+#define T_INTERFACE 358
+#define T_EXTENDS 359
+#define T_IMPLEMENTS 360
+#define T_OBJECT_OPERATOR 361
+#define T_DOUBLE_ARROW 362
+#define T_LIST 363
+#define T_ARRAY 364
+#define T_CALLABLE 365
+#define T_CLASS_C 366
+#define T_TRAIT_C 367
+#define T_METHOD_C 368
+#define T_FUNC_C 369
+#define T_LINE 370
+#define T_FILE 371
+#define T_COMMENT 372
+#define T_DOC_COMMENT 373
+#define T_OPEN_TAG 374
+#define T_OPEN_TAG_WITH_ECHO 375
+#define T_CLOSE_TAG 376
+#define T_WHITESPACE 377
+#define T_START_HEREDOC 378
+#define T_END_HEREDOC 379
+#define T_DOLLAR_OPEN_CURLY_BRACES 380
+#define T_CURLY_OPEN 381
+#define T_PAAMAYIM_NEKUDOTAYIM 382
+#define T_NAMESPACE 383
+#define T_NS_C 384
+#define T_DIR 385
+#define T_NS_SEPARATOR 386
+#define T_WO 387
+#define T_JA_MOD 388
+#define T_JA_DIV 389
+#define T_JA_MULT 390
+#define T_JA_MINUS 391
+#define T_JA_PLUS 392
+#define T_GA 393
+#define T_OP_NE 394
+#define T_OP_EQ 395
+#define T_OPEN_OUTPUT 396
+#define T_CLOSE_OUTPUT 397
+#define T_JA_IF 398
+#define T_JA_ELSE 399
+#define T_OWARI 400
+#define T_NARABA 401
+#define T_HA 402
+#define T_DESU 403
+#define T_NI 404
+#define T_DAINYU 405
+#define T_KURIKAESI 406
+#define T_AIDA 407
+#define T_HENSU 408
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef int YYSTYPE;
+# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
-# define YYSTYPE_IS_TRIVIAL 1
 #endif
+
 
 
 
